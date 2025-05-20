@@ -1,0 +1,15 @@
+h3{
+    color:cyan;
+}
+.myclass{
+    color:blue;
+    background-color: deeppink;
+}
+#myid{
+    color: blue;
+    background-color: deeppink;
+}
+h6,p{
+  color:aqua;
+  background-color: red;
+}
