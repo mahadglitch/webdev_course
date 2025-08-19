@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+    <h2> Real Time Validation Form </h2>
+    <form onsubmit="validate(event)">
+       <label>
+        Email:<input type="text" id="email">
+       </label>
+       <label>
+        Password:<input type="password" id="password">
+       </label>
+       <label>
+        Age:<input type="number" id = "age">
+       </label>
+       <button type="submit"> Log In </button>
+    </form>
+    <p id="message"></p>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        h2{
+            text-transform: uppercase;
+        }
+        form{
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 20px 30px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        label{
+            display: block;
+            margin: 5px;
+        }
+        input{
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 5px;
+        }
+        #message{
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>
