@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+    <h2>
+        Static Keyword
+    </h2>
+    <p id="static"></p>
+    <script>
+        class student{
+            constructor(name){
+                this.name = name
+            }
+            static hello(){
+                return "Hello"
+            }
+        }
+        studentname = new student("Mahad")
+        document.getElementById("static").innerHTML = student.hello()
+    </script>
+</body>
+</html>
