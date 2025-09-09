@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+</head>
+<body>
+    <h2>Converting A JavaScript Object Into JSON String</h2>
+    <p id="result"></p>
+    <script>
+        var myobject = {
+            name : "Mahad" , grade : 7
+        }
+        var myjson = JSON.stringify( myobject )
+        var mynewobject = JSON.parse( myjson )
+        document.getElementById("result").innerHTML = myobject.name + " " + myobject.grade
+    </script>
+</body>
+</html>
