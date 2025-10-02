@@ -1,0 +1,363 @@
+<<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="calculator">
+            <div id="result">
+                <div id="history">
+                    <p id="history-value"></p>
+                </div>
+                <div id="output">
+                    <p id="output-value">0</p>
+                </div>
+            </div>
+            <div id="keyboard">
+                <button class="operator" id="clear">C</button>
+
+                <button class="operator" id="backspace">CE</button>
+
+                <button class="operator" id="%">%</button>
+
+                <button class="operator" id="÷">÷</button>
+
+                <button class="number" id="7">7</button>
+
+                <button class="number" id="8">8</button>
+
+                <button class="number" id="9">9</button>
+
+                <button class="operator" id="*">*</button>
+
+                <button class="number" id="4">4</button>
+
+                <button class="number" id="5">5</button>
+
+                <button class="number" id="6">6</button>
+
+                <button class="operator" id="-">-</button>
+
+                <button class="number" id="1">1</button>
+
+                <button class="number" id="2">2</button>
+
+                <button class="number" id="3">3</button>
+
+                <button class="operator" id="+">+</button>
+
+                <button class="number" id="0" style="grid-column:span 2;">0</button>
+
+                <button class="number" id=".">.</button>
+
+                <button class="operator" id="equals">=</button>
+
+            </div>
+        </div>
+    </div>
+            <style>
+            * {
+
+                margin: 0;
+
+                padding: 0;
+
+                box-sizing: border-box;
+
+            }
+
+            body {
+
+                font-family: 'Segoe UI', sans-serif;
+
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+                height: 100vh;
+
+                display: flex;
+
+                justify-content: center;
+
+                align-items: center;
+
+            }
+
+            #calculator {
+
+                background: #fff;
+
+                border-radius: 20px;
+
+                padding: 20px;
+
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+                width: 300px;
+
+            }
+
+            #result {
+
+                background: #f8f9fa;
+
+                border-radius: 10px;
+
+                padding: 15px;
+
+                margin-bottom: 20px;
+
+                text-align: right;
+
+                min-height: 80px;
+
+            }
+
+            #history-value {
+
+                color: #6c757d;
+
+                font-size: 14px;
+
+                margin-bottom: 5px;
+
+                min-height: 20px;
+
+            }
+
+            #output-value {
+
+                color: #212529;
+
+                font-size: 24px;
+
+                font-weight: bold;
+
+                min-height: 30px;
+
+            }
+
+            #keyboard {
+
+                display: grid;
+
+                grid-template-columns: repeat(4, 1fr);
+
+                gap: 10px;
+
+            }
+
+            button {
+
+                height: 50px;
+
+                border: none;
+
+                border-radius: 10px;
+
+                font-size: 18px;
+
+                font-weight: bold;
+
+                cursor: pointer;
+
+                transition: all 0.2s;
+
+            }
+
+            .number {
+
+                background: #e9ecef;
+
+                color: #495057;
+
+            }
+
+            .number:hover {
+
+                background: #dee2e6;
+
+            }
+
+            .operator {
+
+                background: #007bff;
+
+                color: white;
+
+            }
+
+            .operator:hover {
+
+                background: #0056b3;
+
+            }
+
+            #equals {
+
+                background: #28a745;
+
+                color: white;
+
+            }
+
+            #equals:hover {
+
+                background: #1e7e34;
+
+            }
+
+            #clear {
+
+                background: #dc3545;
+
+                color: white;
+
+            }
+
+            #clear:hover {
+
+                background: #c82333;
+
+            }
+
+            button:active {
+
+                transform: scale(0.95);
+
+            }
+        </style>
+        <script>
+            var output = document.getElementById("output-value")
+
+            var history = document.getElementById("history-value")
+
+            var current = "0"
+
+            var previous = ""
+           
+            var operator = ""
+
+            var waiting = false
+
+            function updatedisplay(){
+                output.textContent = current
+
+                if(previous && operator){
+                    history.textContent = `${previous} ${operator}`
+                }
+                else{
+                    history.textContent = ""
+                }
+            }
+            function inputnumber(num){
+                if(waiting){
+                    current  = num
+                    waiting = false
+                }
+                else{
+                    current = current==="0"? num : current + num
+                }
+                updatedisplay()
+            }
+            function inputoperator(next){
+                const inputvalue = parseFloat(current)
+                if(previous===""){
+                    previous = inputvalue
+                }              
+                else if(operator){
+                    const result = calculate()
+                    current = String(result)
+                    previous = result
+                    updatedisplay()
+                }
+                waiting = true
+                operator = next
+                updatedisplay()
+            }
+            function calculate(){
+                const prev = parseFloat(previous)
+                const curr = parseFloat(current)
+                switch(operator){
+                    case "+": return prev + curr
+                    case "-": return prev - curr
+                    case "*": return prev * curr
+                    case "÷": return curr !==0? prev / curr:0
+                    case "%": return prev % curr
+                    default : return curr
+                }
+            }
+            function clear(){
+                current = "0"
+                previous = ""
+                operator = ""
+                waiting = false
+                updatedisplay()
+            }
+            function backspace(){
+                if(current.length>1){
+                    current = current.slice(0,-1)
+                }
+                else{
+                    current = "0"
+                }
+                updatedisplay()
+            }
+            document.querySelectorAll(".number").forEach(btn => {
+                btn.addEventListener("click" , () => {
+                    if(btn.id==="."){
+                        if(current.indexOf(".") === -1){
+                            inputnumber(".")
+                        }
+                    }
+                    else{
+                        inputnumber(btn.textContent)
+                    }
+                })
+            })
+            document.getElementById("+").addEventListener("click",()=>inputoperator("+"))
+            document.getElementById("-").addEventListener("click",()=>inputoperator("-"))
+            document.getElementById("*").addEventListener("click",()=>inputoperator("*"))
+            document.getElementById("÷").addEventListener("click",()=>inputoperator("÷"))
+            document.getElementById("%").addEventListener("click",()=>inputoperator("%"))
+            document.getElementById("equals").addEventListener("click",()=>{
+                if(operator && previous!==""&&!waiting){
+                const result = calculate()
+                current = String(result)
+                previous = ""
+                operator = ""
+                waiting = true
+                updatedisplay()
+                }
+            })
+          document.getElementById("clear").addEventListener("click",clear)
+          document.getElementById("backspace").addEventListener("click",backspace)
+          document.addEventListener('keydown', (e) => {
+
+if (e.key >= '0' && e.key <= '9' || e.key === '.') inputnumber(e.key);
+
+if (e.key === '+') inputoperator('+');
+
+if (e.key === '-') inputoperator('-');
+
+if (e.key === '*') inputoperator('*');
+
+if (e.key === '/') { e.preventDefault(); inputoperator('÷'); }
+
+if (e.key === '%') inputoperator('%');
+
+if (e.key === 'Enter' || e.key === '=') document.getElementById('equals').click();
+
+if (e.key === 'Escape') clear();
+
+if (e.key === 'Backspace') backspace();
+
+});
+updatedisplay()
+        </script>
+</body>
+</html>

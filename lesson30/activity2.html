@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+    <p>Enter a number and click OK</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myfunction()">OK</button>
+    <p>
+       If the number is less than or greater 300 an error message should be seen. 
+    </p>
+    <p id="result"></p>
+    <script>
+        function myfunction(){
+            var object = document.getElementById("id1")
+            if(!object.checkValidity()){
+                document.getElementById("result").innerHTML = object.validationMessage
+            }
+            else{
+                document.getElementById("result").innerHTML = "Correct Input"
+            }
+        }
+    </script>
+</body>
+</html>
