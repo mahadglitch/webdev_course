@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Website Part 2</title>
+</head>
+<body style="font-family: Arial; margin: 0; background-color: #fff7e6;">
+
+  <!-- Header -->
+  <div style="background-color: #ff9800; color: white; text-align: center; padding: 20px;">
+    <h1 style="margin: 0;">🍴 My Restaurant</h1>
+    <p style="margin: 5px 0;">Tasty Food, Freshly Served!</p>
+  </div>
+
+  <!-- About Section -->
+  <div style="padding: 20px; text-align: center;">
+    <h2>About Our Restaurant</h2>
+    <p style="font-size: 16px; color: #444;">
+      Welcome to <b>My Restaurant</b> — we serve fresh and delicious meals made with love and care. 
+      Our goal is to make every bite unforgettable!
+    </p>
+  </div>
+
+  <!-- Portfolio Section -->
+  <div id="portfolio" style="background-color: #fff3cd; padding: 20px; text-align: center;">
+    <h2>Our Projects</h2>
+    <p style="margin-bottom: 15px;">Here are some of our food designs and website ideas.</p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+      <div style="background-color: white; width: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpAufy0C04QMVd6W2Qq5B6w2_VE3PQbYFpqmocjVrxsPUqypYUBi9X4EAaHX3EdbNm3IA&usqp=CAU" alt="Burger" style="width:100%; border-radius: 5px;">
+        <h4>Burger Menu</h4>
+        <p style="font-size: 14px;">A simple food menu webpage layout.</p>
+      </div>
+
+      <div style="background-color: white; width: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Pizza" style="width:100%; border-radius: 5px;">
+        <h4>Pizza Page</h4>
+        <p style="font-size: 14px;">A single-page design showing pizza flavors.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div style="padding: 20px; text-align: center;">
+    <h2>Contact Us</h2>
+    <p>Send us a message below 👇</p>
+
+    <form onsubmit="sendMessage(event)" style="max-width: 300px; margin: auto;">
+      <input type="text" id="name" placeholder="Your Name" required 
+             style="width: 100%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc;"><br>
+      <input type="email" id="email" placeholder="Your Email" required 
+             style="width: 100%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc;"><br>
+      <button type="submit" 
+              style="background-color: #ff9800; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+        Send
+      </button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #333; color: white; text-align: center; padding: 10px;">
+    <p style="margin: 0;">© 2025 My Restaurant | Made by Mahad</p>
+  </div>
+
+  <!-- Small JS -->
+  <script>
+    function sendMessage(e) {
+      e.preventDefault();
+      alert("Thanks! Your message has been sent 😊");
+    }
+  </script>
+
+</body>
+</html>
