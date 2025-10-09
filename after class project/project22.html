@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Portfolio | Part 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🍴 Gourmet Garden</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Welcome to Our Restaurant</h2>
+    <p>Where flavor meets passion — crafted with love and tradition.</p>
+    <button onclick="scrollToSection('portfolio')">See Our Projects</button>
+  </section>
+
+  <section id="portfolio">
+    <h2>Our Projects</h2>
+    <p>Here’s a sneak peek into our web creations and restaurant setups!</p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" alt="Project 1">
+        <h3>Elegant Dining Page</h3>
+        <p>A beautiful website design that enhances the luxury dining experience.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Project 2">
+        <h3>Food Menu Gallery</h3>
+        <p>An interactive menu page built to showcase our finest dishes.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Project 3">
+        <h3>Online Order Portal</h3>
+        <p>A fast and clean ordering system for customers on the go.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Want to collaborate or see more of our work? Drop a message below!</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gourmet Garden. Crafted by Mahad.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
