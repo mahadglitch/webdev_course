@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank App UI | Part 1</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f2f7ff; margin: 0;">
+
+  <!-- Header -->
+  <div style="background-color: #1565c0; color: white; text-align: center; padding: 20px;">
+    <h1 style="margin: 0;">🏦 Bank App</h1>
+    <p style="margin: 5px 0;">Track your Income & Expenses</p>
+  </div>
+
+  <!-- Balance Section -->
+  <div style="text-align: center; padding: 30px;">
+    <h2 style="margin-bottom: 10px; color: #1565c0;">Current Balance</h2>
+    <h1 style="margin: 0; font-size: 40px; color: #2e7d32;">$0.00</h1>
+  </div>
+
+  <!-- Income & Expense Boxes -->
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px;">
+    <div style="background-color: #e8f5e9; width: 200px; padding: 20px; text-align: center; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <h3 style="color: #2e7d32;">Income</h3>
+      <p style="font-size: 24px; margin: 10px 0; color: #2e7d32;">$0</p>
+    </div>
+
+    <div style="background-color: #ffebee; width: 200px; padding: 20px; text-align: center; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <h3 style="color: #c62828;">Expense</h3>
+      <p style="font-size: 24px; margin: 10px 0; color: #c62828;">$0</p>
+    </div>
+  </div>
+
+  <!-- Add Transaction Form -->
+  <div style="background-color: #fff; margin: 20px auto; width: 90%; max-width: 400px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 20px;">
+    <h2 style="text-align: center; color: #1565c0;">Add Transaction</h2>
+
+    <label>Transaction Name:</label><br>
+    <input type="text" placeholder="e.g. Salary or Groceries" 
+           style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc;"><br>
+
+    <label>Amount:</label><br>
+    <input type="number" placeholder="Enter amount" 
+           style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc;"><br>
+
+    <label>Type:</label><br>
+    <select style="width: 100%; padding: 8px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc;">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select><br>
+
+    <button style="background-color: #1565c0; color: white; width: 100%; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+      Add
+    </button>
+  </div>
+
+  <!-- Transaction History -->
+  <div style="margin: 30px auto; width: 90%; max-width: 500px;">
+    <h2 style="text-align: center; color: #1565c0;">Transaction History</h2>
+    <div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <p style="color: #777;">No transactions yet...</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #1565c0; color: white; text-align: center; padding: 10px;">
+    <p style="margin: 0;">© 2025 Bank App | Designed by Mahad</p>
+  </div>
+
+</body>
+</html>
